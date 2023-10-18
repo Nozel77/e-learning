@@ -1,6 +1,7 @@
+import 'package:e_learning/app/pages/login/Loginpage.dart';
+import 'package:e_learning/app/pages/onboarding/onboarding.dart';
 import 'package:flutter/material.dart';
 import 'app/pages/homepage/Homepage.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: LoginScreen());
   }
 }
-
