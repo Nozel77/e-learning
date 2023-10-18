@@ -19,8 +19,14 @@ class LoginScreen extends StatelessWidget {
           padding: TSpacingStyle.paddingWithAppBarHeight,
           child: Column(
             children: [
-              const TLoginHeader(),
-              const TLoginForm(),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: const TLoginHeader(),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: const TLoginForm(),
+              ),
               TFromDivider(dividerText: TTexts.orsignwith.capitalize!),
               const SizedBox(
                 height: Tsize.spaceBtwSections,

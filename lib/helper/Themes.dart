@@ -52,15 +52,15 @@ TextStyle textTitle() {
       textStyle: TextStyle(
           color: Tcolor.textColor,
           fontWeight: FontWeight.w600,
-          fontSize: figmaFontsize(25)));
+          fontSize: figmaFontsize(30)));
 }
 
 TextStyle textSub() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
           color: Tcolor.textColor,
-          fontWeight: FontWeight.w600,
-          fontSize: figmaFontsize(20)));
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(25)));
 }
 
 class TTexts {
@@ -112,11 +112,10 @@ class TSpacingStyle {
 }
 
 class images {
-  static const String Logo = "assets/Logo.png";
+  static const String LOGO = "assets/LOGGO (2).png";
   static const String onBoarding1 = "assets/svg1.svg";
   static const String onBoarding2 = "assets/svg2.svg";
   static const String onBoarding3 = "assets/svg3.svg";
   static const String Next = "assets/Next.svg";
   static const String google = "assets/gugel.png";
-  static const String facebook = "assets/facebook.png";
 }
