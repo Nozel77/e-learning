@@ -22,11 +22,11 @@ class TFromDivider extends StatelessWidget {
         )),
         Text(
           TTexts.orsignwith.capitalize!,
-          style: textOnboardingMedium(color: Tcolor.textColor),
+          style: DividerText(color: Tcolor.textColor),
         ),
         Flexible(
             child: Divider(
-          color: Tcolor.darkGrey,
+          color: Tcolor.grey,
           thickness: 0.5,
           indent: 5,
           endIndent: 60,

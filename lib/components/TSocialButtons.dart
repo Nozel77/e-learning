@@ -14,7 +14,7 @@ class TSocialButtons extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
               border: Border.all(color: Tcolor.grey),
-              borderRadius: BorderRadius.circular(100)),
+              borderRadius: BorderRadius.circular(10)),
           child: IconButton(
             onPressed: () {},
             icon: const Image(
