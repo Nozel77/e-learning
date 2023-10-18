@@ -8,26 +8,24 @@ class TSocialButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          decoration: BoxDecoration(
-              border: Border.all(color: Tcolor.grey),
-              borderRadius: BorderRadius.circular(10)),
-          child: IconButton(
-            onPressed: () {},
-            icon: const Image(
-              width: Tsize.iconmd,
-              height: Tsize.iconmd,
-              image: AssetImage(images.google),
-            ),
+    return SizedBox(
+      width: double.infinity,
+      child: MaterialButton(
+        minWidth: double.infinity,
+        height: 45,
+        onPressed: () {},
+        color: Tcolor.background,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+            side: BorderSide(color: Tcolor.darkGrey)),
+        elevation: 0,
+        child: Image(
+          height: 25,
+          image: AssetImage(
+            images.google,
           ),
         ),
-        const SizedBox(
-          width: Tsize.spaceBtwItems,
-        ),
-      ],
+      ),
     );
   }
 }

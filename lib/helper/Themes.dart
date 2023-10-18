@@ -8,6 +8,7 @@ class Tcolor {
   static const Color secondaryText = Color.fromRGBO(255, 193, 0, 1);
   static const Color grey = Color.fromRGBO(125, 124, 124, 1);
   static const Color darkGrey = Color.fromRGBO(74, 76, 79, 1);
+  static const Color border = Color.fromRGBO(218, 218, 218, 1);
 }
 
 figmaFontsize(int fontSize) {
@@ -22,16 +23,15 @@ TextStyle buttonStyle({required final color}) {
           fontSize: figmaFontsize(21)));
 }
 
-TextStyle DividerText({required final color}) {
+TextStyle DividerText() {
   return GoogleFonts.poppins(
-    textStyle: TextStyle(
-      color: Tcolor.textColor,
-      fontWeight: FontWeight.w400,
-      fontSize: figmaFontsize(12))
-  );
+      textStyle: TextStyle(
+          color: Tcolor.textColor,
+          fontWeight: FontWeight.w400,
+          fontSize: figmaFontsize(12)));
 }
 
-TextStyle textOnboardingBold({required final color}) {
+TextStyle textOnboardingBold() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
           color: Tcolor.textColor,
@@ -39,7 +39,7 @@ TextStyle textOnboardingBold({required final color}) {
           fontSize: figmaFontsize(28)));
 }
 
-TextStyle textOnboardingMedium({required final color}) {
+TextStyle textOnboardingMedium() {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
           color: Tcolor.textColor,
@@ -47,9 +47,25 @@ TextStyle textOnboardingMedium({required final color}) {
           fontSize: figmaFontsize(28)));
 }
 
+TextStyle textTitle() {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: Tcolor.textColor,
+          fontWeight: FontWeight.w600,
+          fontSize: figmaFontsize(25)));
+}
+
+TextStyle textSub() {
+  return GoogleFonts.poppins(
+      textStyle: TextStyle(
+          color: Tcolor.textColor,
+          fontWeight: FontWeight.w600,
+          fontSize: figmaFontsize(20)));
+}
+
 class TTexts {
-  static const String title = "Welcome Back";
-  static const String subtitle = "Tai ngasu";
+  static const String title = "Welcome Back!Glad To";
+  static const String subtitle = "see you, Again!";
   static const String email = "E-mail";
   static const String password = "Password";
   static const String firstname = "First Name";
@@ -57,6 +73,7 @@ class TTexts {
   static const String rememberme = "Remember Me";
   static const String forgetpw = "Forget Password?";
   static const String signin = "Sign In";
+  static const String login = "Log In";
   static const String createakun = "Create Account";
   static const String orsignwith = "or sign in with";
   static const String orsignupwith = "or sign up with";
@@ -101,4 +118,5 @@ class images {
   static const String onBoarding3 = "assets/svg3.svg";
   static const String Next = "assets/Next.svg";
   static const String google = "assets/gugel.png";
+  static const String facebook = "assets/facebook.png";
 }

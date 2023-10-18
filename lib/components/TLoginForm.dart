@@ -24,7 +24,6 @@ class TLoginForm extends StatelessWidget {
               border: OutlineInputBorder(
                 borderSide: BorderSide(color: Color.fromARGB(255, 16, 42, 97)),
               ),
-              prefixIcon: Icon(Iconsax.direct_right),
               labelText: TTexts.email,
             ),
           ),
@@ -36,12 +35,11 @@ class TLoginForm extends StatelessWidget {
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Color.fromARGB(255, 16, 42, 97)),
+                borderSide: BorderSide(color: Tcolor.border),
               ),
               border: OutlineInputBorder(
-                borderSide: BorderSide(color: Color.fromARGB(255, 16, 42, 97)),
+                borderSide: BorderSide(color: Tcolor.border),
               ),
-              prefixIcon: Icon(Iconsax.password_check),
               labelText: TTexts.password,
             ),
           ),
@@ -53,23 +51,33 @@ class TLoginForm extends StatelessWidget {
               Row(
                 children: [],
               ),
-              TextButton(onPressed: () {}, child: const Text(TTexts.forgetpw)),
+              TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    TTexts.forgetpw,
+                    style: DividerText(),
+                  )),
             ],
           ),
           const SizedBox(height: Tsize.spaceBtwSections),
 
-          //Sign in buttin
+          //Log in buttin
           SizedBox(
               width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () {}, child: const Text(TTexts.signin))),
-          const SizedBox(height: Tsize.spaceBtwItems),
-
-          //Create akun
-          SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                  onPressed: () {}, child: const Text(TTexts.createakun))),
+              child: MaterialButton(
+                minWidth: double.infinity,
+                height: 45,
+                onPressed: () {},
+                color: Tcolor.secondaryText,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                elevation: 0,
+                child: Text(
+                  TTexts.login,
+                ),
+                textColor: Tcolor.background,
+              )),
         ],
       )),
     );

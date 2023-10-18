@@ -11,18 +11,11 @@ class TLoginHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Image(
-          height: 150,
-          image: AssetImage(images.Logo),
-        ),
-        Text(TTexts.title, style: textOnboardingBold(color: Tcolor.textColor)),
+        Text(TTexts.title, style: textTitle()),
         const SizedBox(
           height: Tsize.sm,
         ),
-        Text(
-          TTexts.subtitle,
-          style: textOnboardingMedium(color: Tcolor.secondaryText),
-        ),
+        Text(TTexts.subtitle, style: textOnboardingMedium())
       ],
     );
   }
