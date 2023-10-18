@@ -98,7 +98,7 @@ class _OnboardingDemoState extends State<OnboardingDemo> {
                   const Spacer(),
                   MaterialButton(
                     onPressed: _nextPage,
-                    child: SvgPicture.asset("lib/assets/Next.svg"),
+                    child: SvgPicture.asset("assets/Next.svg"),
                   ),
                 ],
               ),

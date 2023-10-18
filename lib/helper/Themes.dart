@@ -22,6 +22,15 @@ TextStyle buttonStyle({required final color}) {
           fontSize: figmaFontsize(21)));
 }
 
+TextStyle DividerText({required final color}) {
+  return GoogleFonts.poppins(
+    textStyle: TextStyle(
+      color: Tcolor.textColor,
+      fontWeight: FontWeight.w400,
+      fontSize: figmaFontsize(12))
+  );
+}
+
 TextStyle textOnboardingBold({required final color}) {
   return GoogleFonts.poppins(
       textStyle: TextStyle(
@@ -86,11 +95,10 @@ class TSpacingStyle {
 }
 
 class images {
-  static const String Logo = "lib/assets/Logo.png";
-  static const String onBoarding1 = "lib/assets/svg1.svg";
-  static const String onBoarding2 = "lib/assets/svg2.svg";
-  static const String onBoarding3 = "lib/assets/svg3.svg";
-  static const String Next = "lib/assets/Next.svg";
-  static const String google = "lib/assets/gugel.png";
-  static const String facebook = "lib/assets/facebook.png";
+  static const String Logo = "assets/Logo.png";
+  static const String onBoarding1 = "assets/svg1.svg";
+  static const String onBoarding2 = "assets/svg2.svg";
+  static const String onBoarding3 = "assets/svg3.svg";
+  static const String Next = "assets/Next.svg";
+  static const String google = "assets/gugel.png";
 }
