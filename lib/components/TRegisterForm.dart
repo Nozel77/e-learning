@@ -94,7 +94,7 @@ class TRegisterForm extends StatelessWidget {
                 minWidth: double.infinity,
                 height: 45,
                 onPressed: () {},
-                color: Tcolor.secondaryText,
+                color: Tcolor.button,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),

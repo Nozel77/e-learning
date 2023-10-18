@@ -27,7 +27,7 @@ class RegisterPage extends StatelessWidget {
               const SizedBox(
                 height: Tsize.spaceBtwSections,
               ),
-              TSocialButtons()
+              TSocialButtons(),
             ],
           ),
         ),

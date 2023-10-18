@@ -4,7 +4,7 @@ import "package:google_fonts/google_fonts.dart";
 class Tcolor {
   static const Color background = Colors.white;
   static const Color textColor = Color.fromRGBO(46, 46, 65, 1);
-  static const Color button = Color.fromRGBO(255, 224, 127, 1);
+  static const Color button = Color.fromRGBO(89, 143, 237, 1);
   static const Color secondaryText = Color.fromRGBO(255, 193, 0, 1);
   static const Color grey = Color.fromRGBO(125, 124, 124, 1);
   static const Color darkGrey = Color.fromRGBO(74, 76, 79, 1);
@@ -80,6 +80,7 @@ class TTexts {
   static const String createakun = "Create Account";
   static const String orsignwith = "or sign in with";
   static const String orsignupwith = "or sign up with";
+  static const String haveaccount = "have an account?";
 }
 
 class Tsize {
