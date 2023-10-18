@@ -1,6 +1,8 @@
+import 'package:e_learning/app/pages/register/Registerpage.dart';
 import 'package:e_learning/helper/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:get/get.dart';
 
 class TLoginForm extends StatelessWidget {
   const TLoginForm({
@@ -35,15 +37,15 @@ class TLoginForm extends StatelessWidget {
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Tcolor.border),
+                borderSide: BorderSide(color: Color.fromARGB(255, 16, 42, 97)),
               ),
               border: OutlineInputBorder(
-                borderSide: BorderSide(color: Tcolor.border),
+                borderSide: BorderSide(color: Color.fromARGB(255, 16, 42, 97)),
               ),
               labelText: TTexts.password,
             ),
           ),
-          const SizedBox(height: Tsize.spaceBtwInputFields / 2),
+          const SizedBox(height: Tsize.spaceBtwInputFields),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,8 +69,8 @@ class TLoginForm extends StatelessWidget {
               child: MaterialButton(
                 minWidth: double.infinity,
                 height: 45,
-                onPressed: () {},
-                color: Tcolor.secondaryText,
+                onPressed: () => Get.to(RegisterPage()),
+                color: Tcolor.button,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
