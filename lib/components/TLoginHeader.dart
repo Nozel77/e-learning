@@ -19,12 +19,6 @@ class TLoginHeader extends StatelessWidget {
         const SizedBox(
           height: Tsize.sm,
         ),
-        Image(
-          height: 150,
-          image: AssetImage(
-            images.LOGO,
-          ),
-        )
       ],
     );
   }

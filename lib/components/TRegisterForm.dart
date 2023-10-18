@@ -1,5 +1,7 @@
+import 'package:e_learning/app/pages/login/Loginpage.dart';
 import 'package:e_learning/helper/Themes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TRegisterForm extends StatelessWidget {
@@ -93,7 +95,7 @@ class TRegisterForm extends StatelessWidget {
               child: MaterialButton(
                 minWidth: double.infinity,
                 height: 45,
-                onPressed: () {},
+                onPressed: () => Get.back(result: 'success'),
                 color: Tcolor.button,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
