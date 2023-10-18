@@ -69,11 +69,14 @@ class TTexts {
   static const String email = "E-mail";
   static const String password = "Password";
   static const String firstname = "First Name";
+  static const String cPassword = "Confirm Password";
+  static const String username = "Username";
   static const String lastname = "Last Name";
   static const String rememberme = "Remember Me";
   static const String forgetpw = "Forget Password?";
   static const String signin = "Sign In";
   static const String login = "Log In";
+  static const String register = "Register";
   static const String createakun = "Create Account";
   static const String orsignwith = "or sign in with";
   static const String orsignupwith = "or sign up with";
