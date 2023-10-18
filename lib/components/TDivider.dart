@@ -22,7 +22,7 @@ class TFromDivider extends StatelessWidget {
         )),
         Text(
           TTexts.orsignwith.capitalize!,
-          style: DividerText(color: Tcolor.textColor),
+          style: DividerText(),
         ),
         Flexible(
             child: Divider(
