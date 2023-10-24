@@ -122,4 +122,5 @@ class images {
   static const String onBoarding3 = "assets/svg3.svg";
   static const String Next = "assets/Next.svg";
   static const String google = "assets/gugel.png";
+  static const String banner = "assets/banner.png";
 }
