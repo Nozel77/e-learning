@@ -5,10 +5,13 @@ class Tcolor {
   static const Color background = Colors.white;
   static const Color textColor = Color.fromRGBO(46, 46, 65, 1);
   static const Color button = Color.fromRGBO(89, 143, 237, 1);
+  static const Color style = Color.fromRGBO(29, 38, 125, 1);
   static const Color secondaryText = Color.fromRGBO(255, 193, 0, 1);
-  static const Color grey = Color.fromRGBO(125, 124, 124, 1);
+  static const Color grey = Color.fromRGBO(138, 142, 151, 1);
   static const Color darkGrey = Color.fromRGBO(74, 76, 79, 1);
   static const Color border = Color.fromRGBO(218, 218, 218, 1);
+  static const Color container1 = Color.fromRGBO(134, 96, 229, 1);
+  static const Color avatr = Color.fromRGBO(116, 60, 194, 1);
 }
 
 figmaFontsize(int fontSize) {
@@ -81,6 +84,7 @@ class TTexts {
   static const String orsignwith = "or sign in with";
   static const String orsignupwith = "or sign up with";
   static const String haveaccount = "have an account?";
+  static const String viewall = "View all";
 }
 
 class Tsize {
@@ -123,4 +127,9 @@ class images {
   static const String Next = "assets/Next.svg";
   static const String google = "assets/gugel.png";
   static const String banner = "assets/banner.png";
+  static const String pf1 = "assets/Ellipse 9.png";
+  static const String pf2 = "assets/profile2.png";
+  static const String pf3 = "assets/profile3.png";
+  static const String web1 = "assets/icons8-web-design-64 (1) 1.svg";
+  static const String Webdesain = "assets/Webdesain.png";
 }

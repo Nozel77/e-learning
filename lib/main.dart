@@ -1,3 +1,5 @@
+import 'package:e_learning/components/BottomNav.dart';
+import 'package:e_learning/components/TCustomTab.dart';
 import 'package:e_learning/core.dart';
 import 'package:e_learning/app/pages/login/Loginpage.dart';
 import 'package:e_learning/app/pages/onboarding/onboarding.dart';
