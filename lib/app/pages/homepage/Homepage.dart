@@ -1,5 +1,8 @@
 import 'package:e_learning/app/pages/homepage/detail/TCard.dart';
 import 'package:e_learning/app/pages/homepage/detail/THeaderHP.dart';
+import 'package:e_learning/app/pages/homepage/detail/TheaderRev.dart';
+import 'package:e_learning/app/pages/homepage/detail/category.dart';
+import 'package:e_learning/app/pages/homepage/detail/txtCategory.dart';
 import 'package:e_learning/components/BottomNav.dart';
 import 'package:e_learning/components/TCustomTab.dart';
 import 'package:e_learning/components/THeaderHome.dart';
@@ -30,7 +33,14 @@ class Homepage extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          TCard(),
+          TxtCategory(),
+          SldierCategory(),
+          Row(
+            children: [
+              TCard(),
+            ],
+          ),
+
           const SizedBox(
             height: 30,
           ),
