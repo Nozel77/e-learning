@@ -46,7 +46,8 @@ class THeaderHP extends StatelessWidget {
             ],
           ),
           Padding(
-              padding: EdgeInsets.only(left: 40.0, top: 60.0),
+              padding: EdgeInsets.only(
+                  top: 60.0, left: MediaQuery.of(context).size.width * 0.12),
               child: CircleAvatar(
                 backgroundColor: Tcolor.border,
                 radius: 25,
