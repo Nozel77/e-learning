@@ -45,17 +45,18 @@ class THeaderHP extends StatelessWidget {
               ),
             ],
           ),
+          Spacer(), // Add this spacer to push the next widget to the right
           Padding(
-              padding: EdgeInsets.only(
-                  top: 60.0, left: MediaQuery.of(context).size.width * 0.12),
-              child: CircleAvatar(
-                backgroundColor: Tcolor.border,
-                radius: 25,
-                child: Icon(
-                  Iconsax.message_notif4,
-                  size: 25,
-                ),
-              )),
+            padding: EdgeInsets.only(top: 60, right: 10),
+            child: CircleAvatar(
+              backgroundColor: Tcolor.border,
+              radius: 25,
+              child: Icon(
+                Iconsax.message_notif4,
+                size: 25,
+              ),
+            ),
+          )
         ],
       ),
     );
