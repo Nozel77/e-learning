@@ -24,7 +24,7 @@ class TCard extends StatelessWidget {
         Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.only(left: 20),
               child: GestureDetector(
                 onTap: () {
                   Get.to(DetailPage());
