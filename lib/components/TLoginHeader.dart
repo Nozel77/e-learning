@@ -11,6 +11,9 @@ class TLoginHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(
+          height: Tsize.appBarHeight,
+        ),
         Text(TTexts.title, style: textTitle()),
         const SizedBox(
           height: Tsize.sm,

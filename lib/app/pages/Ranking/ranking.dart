@@ -5,8 +5,8 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../helper/Themes.dart';
 
-class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+class Ranking extends StatelessWidget {
+  const Ranking({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class DetailPage extends StatelessWidget {
         appBar: AppBar(
           title: Center(
             child: Text(
-              "Detail",
+              "Ranking",
               style: textOnboardingBold(),
             ),
           ),

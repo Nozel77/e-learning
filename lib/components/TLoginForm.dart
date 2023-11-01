@@ -1,3 +1,4 @@
+import 'package:e_learning/app/pages/homepage/Homepage.dart';
 import 'package:e_learning/app/pages/register/Registerpage.dart';
 import 'package:e_learning/helper/Themes.dart';
 import 'package:flutter/material.dart';
@@ -61,7 +62,7 @@ class TLoginForm extends StatelessWidget {
                   )),
             ],
           ),
-          const SizedBox(height: Tsize.spaceBtwSections),
+          const SizedBox(height: Tsize.sm),
 
           //Log in buttin
           SizedBox(
@@ -69,7 +70,7 @@ class TLoginForm extends StatelessWidget {
               child: MaterialButton(
                 minWidth: double.infinity,
                 height: 45,
-                onPressed: () => Get.to(RegisterPage()),
+                onPressed: () => Get.to(Homepage()),
                 color: Tcolor.button,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

@@ -1,17 +1,11 @@
+import 'package:e_learning/app/pages/BottomBar/TBottomBar.dart';
 import 'package:e_learning/app/pages/homepage/detail/TCard.dart';
+import 'package:e_learning/app/pages/homepage/detail/TCard2.dart';
 import 'package:e_learning/app/pages/homepage/detail/THeaderHP.dart';
-import 'package:e_learning/app/pages/homepage/detail/TheaderRev.dart';
 import 'package:e_learning/app/pages/homepage/detail/category.dart';
 import 'package:e_learning/app/pages/homepage/detail/txtCategory.dart';
-import 'package:e_learning/components/BottomNav.dart';
-import 'package:e_learning/components/TCustomTab.dart';
-import 'package:e_learning/components/THeaderHome.dart';
 import 'package:e_learning/core.dart';
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/percent_indicator.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:iconsax/iconsax.dart';
 
 import '../../../state_util.dart';
 
@@ -31,20 +25,17 @@ class Homepage extends StatelessWidget {
             image: AssetImage(images.banner),
           ),
           const SizedBox(
-            height: 30,
+            height: 10,
           ),
           TxtCategory(),
           SldierCategory(),
           Row(
-            children: [
-              TCard(),
-            ],
+            children: [TCard(), TCard2()],
           ),
-
           const SizedBox(
-            height: 30,
+            height: 10,
           ),
-          //Nav
+          ConvexNavigationBarPage()
         ],
       ),
     );

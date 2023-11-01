@@ -42,8 +42,8 @@ dependencies:
   iconsax: ^0.0.8
   ionicons: ^0.2.2
   percent_indicator: ^4.2.3
-  google_nav_bar: ^5.0.6
-google_nav_bar: ^5.0.6
+  convex_bottom_bar: ^3.2.0
+convex_bottom_bar: ^3.2.0
 
 dev_dependencies:
   flutter_test:

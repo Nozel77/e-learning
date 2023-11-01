@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
                 child: const TLoginHeader(),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
+                padding: const EdgeInsets.symmetric(vertical: 10),
                 child: const TLoginForm(),
               ),
               TFromDivider(dividerText: TTexts.orsignwith.capitalize!),
