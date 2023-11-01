@@ -5,8 +5,8 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../helper/Themes.dart';
 
-class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+class Profile extends StatelessWidget {
+  const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -9,8 +9,8 @@ import '../../../../components/TCustomTab.dart';
 import '../../../../helper/Themes.dart';
 import '../../../../state_util.dart';
 
-class TCard extends StatelessWidget {
-  const TCard({
+class TCard2 extends StatelessWidget {
+  const TCard2({
     super.key,
   });
 
@@ -24,7 +24,7 @@ class TCard extends StatelessWidget {
         Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 2),
               child: GestureDetector(
                 onTap: () {
                   Get.to(DetailPage());
@@ -34,7 +34,7 @@ class TCard extends StatelessWidget {
                   height: 230,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: Tcolor.container1,
+                    color: Tcolor.container2,
                   ),
                   child: Column(
                     children: [
@@ -43,12 +43,12 @@ class TCard extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(12),
                             child: CircleAvatar(
-                              backgroundColor: Tcolor.avatr,
+                              backgroundColor: Tcolor.avatar2,
                               radius: 20,
                             ),
                           ),
                           Container(
-                            color: Tcolor.avatr,
+                            color: Tcolor.avatar2,
                             margin: EdgeInsets.only(left: 30),
                             child: Padding(
                               padding: const EdgeInsets.all(3),
@@ -78,14 +78,14 @@ class TCard extends StatelessWidget {
                             Container(
                               margin: EdgeInsets.only(left: 30),
                               child: CircleAvatar(
-                                backgroundImage: AssetImage(images.pf2),
+                                backgroundImage: AssetImage(images.pf1),
                                 radius: 18,
                               ),
                             ),
                             Container(
                               margin: EdgeInsets.only(left: 60),
                               child: CircleAvatar(
-                                backgroundImage: AssetImage(images.pf3),
+                                backgroundImage: AssetImage(images.pf1),
                                 radius: 18,
                               ),
                             ),
@@ -101,7 +101,7 @@ class TCard extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Web",
+                            Text("App",
                                 style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.w600,
                                   color: Colors.white,
@@ -134,7 +134,7 @@ class TCard extends StatelessWidget {
                         child: LinearPercentIndicator(
                           animation: false,
                           lineHeight: 5,
-                          percent: 0.3,
+                          percent: 0.5,
                           width: 150,
                           progressColor: Colors.deepPurple,
                           backgroundColor: Colors.deepPurple.shade200,

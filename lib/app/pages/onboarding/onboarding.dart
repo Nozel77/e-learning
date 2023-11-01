@@ -1,14 +1,15 @@
+import 'package:e_learning/app/pages/login/Loginpage.dart';
 import 'package:e_learning/helper/Themes.dart';
+import 'package:e_learning/state_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class OnboardContent extends StatelessWidget {
-  final String svg, title, description;
+  final String image, title, description;
 
   OnboardContent({
-    required this.svg,
+    required this.image,
     required this.title,
     required this.description,
   });
@@ -18,11 +19,13 @@ class OnboardContent extends StatelessWidget {
     return Column(
       children: [
         const Spacer(),
-        SvgPicture.asset(
-          svg,
-          height: 250,
+        Image.asset(
+          image,
+          height: 350,
         ),
-        const Spacer(),
+        SizedBox(
+          height: 50,
+        ),
         Text(title, textAlign: TextAlign.left, style: textOnboardingMedium()),
         Text(description,
             textAlign: TextAlign.center, style: textOnboardingBold()),
@@ -76,7 +79,7 @@ class _OnboardingDemoState extends State<OnboardingDemo> {
                   },
                   children: demo_data.map((data) {
                     return OnboardContent(
-                      svg: data.svg,
+                      image: data.image,
                       title: data.title,
                       description: data.description,
                     );
@@ -96,7 +99,7 @@ class _OnboardingDemoState extends State<OnboardingDemo> {
                   ),
                   const Spacer(),
                   MaterialButton(
-                    onPressed: _nextPage,
+                    onPressed: () => Get.to(LoginScreen()),
                     child: SvgPicture.asset("assets/Next.svg"),
                   ),
                 ],
@@ -128,10 +131,10 @@ class DotIndicator extends StatelessWidget {
 }
 
 class Onboard {
-  final String svg, title, description;
+  final String image, title, description;
 
   Onboard({
-    required this.svg,
+    required this.image,
     required this.title,
     required this.description,
   });
@@ -139,18 +142,18 @@ class Onboard {
 
 final List<Onboard> demo_data = [
   Onboard(
-    svg: "assets/svg1.svg",
+    image: images.onBoarding1,
     title: "Online Study is the",
     description: "Best choice for everyone.",
   ),
   Onboard(
-    svg: "assets/svg2.svg",
+    image: images.onBoarding2,
     title: "Best platform for both",
     description: "Teachers & Learners",
   ),
   Onboard(
-    svg: "assets/svg3.svg",
+    image: images.onBoarding3,
     title: "Learn Anytime,",
-    description: "kontol",
+    description: "Anywhere. AccelerateYour Future and beyond.",
   ),
 ];

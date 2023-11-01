@@ -12,6 +12,8 @@ class Tcolor {
   static const Color border = Color.fromRGBO(218, 218, 218, 1);
   static const Color container1 = Color.fromRGBO(134, 96, 229, 1);
   static const Color avatr = Color.fromRGBO(116, 60, 194, 1);
+  static const Color container2 = Color.fromRGBO(146, 146, 186, 1);
+  static const Color avatar2 = Color.fromRGBO(109, 111, 138, 1);
 }
 
 figmaFontsize(int fontSize) {
@@ -121,9 +123,11 @@ class TSpacingStyle {
 
 class images {
   static const String LOGO = "assets/LOGGO (2).png";
-  static const String onBoarding1 = "assets/svg1.svg";
-  static const String onBoarding2 = "assets/svg2.svg";
-  static const String onBoarding3 = "assets/svg3.svg";
+  static const String onBoarding1 =
+      "assets/Blog_post-bro_1__1_-removebg-preview.png";
+  static const String onBoarding2 =
+      "assets/Novelist_writing-bro_1-removebg-preview.png";
+  static const String onBoarding3 = "assets/onb3.png";
   static const String Next = "assets/Next.svg";
   static const String google = "assets/gugel.png";
   static const String banner = "assets/banner.png";
