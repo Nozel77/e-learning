@@ -1,3 +1,4 @@
+import 'package:e_learning/app/pages/homepage/Homepage.dart';
 import 'package:e_learning/app/pages/login/Loginpage.dart';
 import 'package:e_learning/helper/Themes.dart';
 import 'package:e_learning/state_util.dart';
@@ -99,7 +100,7 @@ class _OnboardingDemoState extends State<OnboardingDemo> {
                   ),
                   const Spacer(),
                   MaterialButton(
-                    onPressed: () => Get.to(LoginScreen()),
+                    onPressed: () => Get.to(Homepage()),
                     child: SvgPicture.asset("assets/Next.svg"),
                   ),
                 ],

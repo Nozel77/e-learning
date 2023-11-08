@@ -4,41 +4,21 @@ import 'package:e_learning/app/pages/homepage/detail/TCard2.dart';
 import 'package:e_learning/app/pages/homepage/detail/THeaderHP.dart';
 import 'package:e_learning/app/pages/homepage/detail/category.dart';
 import 'package:e_learning/app/pages/homepage/detail/txtCategory.dart';
+import 'package:e_learning/app/pages/homepage/model/LearningController.dart';
 import 'package:e_learning/core.dart';
 import 'package:flutter/material.dart';
-
-import '../../../state_util.dart';
+import 'package:get/get.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+  final LearningController learningController = Get.put(LearningController());
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Column(
-        children: [
-          THeaderHP(),
-          const SizedBox(
-            height: 30,
-          ),
-          Image(
-            image: AssetImage(images.banner),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          TxtCategory(),
-          SldierCategory(),
-          Row(
-            children: [TCard(), TCard2()],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          ConvexNavigationBarPage()
-        ],
       body: SingleChildScrollView(
-        controller: ScrollController(),
+        
         child: Column(
           children: [
             THeaderHP(),
@@ -53,18 +33,24 @@ class Homepage extends StatelessWidget {
             ),
             TxtCategory(),
             SldierCategory(),
-            Row(
-              children: [
-                TCard(),
-                TCard(),
-              ],
+            Container(
+              width: width,
+              height: height * 0.3,
+              child: ListView.builder (
+                  scrollDirection: Axis.horizontal,
+                  itemCount: learningController.learningResponseModel.value[0].data.length,
+                  itemBuilder: (context, index) {
+                   final data = learningController.learningResponseModel.value[0].data[index];
+                    return TCard(
+                      title: data.title,
+                      pengajar: data.instructor,
+                    
+                     
+                    
+                    );
+                  }),
             ),
-            Row(
-              children: [
-                TCard(),
-                TCard(),
-              ],
-            ),
+            
             const SizedBox(
               height: 30,
             ),
