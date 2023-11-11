@@ -6,7 +6,7 @@ String learningResponseModelsToJson(LearningResponseModels data) => json.encode(
 class LearningResponseModels {
     bool status;
     String message;
-    List<Datum> data;
+    List<Learning> data;
 
     LearningResponseModels({
         required this.status,
@@ -21,7 +21,7 @@ class LearningResponseModels {
     factory LearningResponseModels.fromJson(Map<String, dynamic> json) => LearningResponseModels(
         status: json["status"],
         message: json["message"],
-        data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+        data: List<Learning>.from(json["data"].map((x) => Learning.fromJson(x))),
     );
 
     Map<String, dynamic> toJson() => {
@@ -31,7 +31,7 @@ class LearningResponseModels {
     };
 }
 
-class Datum {
+class Learning {
     int id;
     String title;
     String instructor;
@@ -40,7 +40,7 @@ class Datum {
     DateTime createdAt;
     DateTime updatedAt;
 
-    Datum({
+    Learning({
         required this.id,
         required this.title,
         required this.instructor,
@@ -50,11 +50,11 @@ class Datum {
         required this.updatedAt,
     });
 
-    factory Datum.fromRawJson(String str) => Datum.fromJson(json.decode(str));
+    factory Learning.fromRawJson(String str) => Learning.fromJson(json.decode(str));
 
     String toRawJson() => json.encode(toJson());
 
-    factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+    factory Learning.fromJson(Map<String, dynamic> json) => Learning(
         id: json["id"],
         title: json["title"],
         instructor: json["instructor"],

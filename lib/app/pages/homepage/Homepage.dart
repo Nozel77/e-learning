@@ -38,9 +38,9 @@ class Homepage extends StatelessWidget {
               height: height * 0.3,
               child: ListView.builder (
                   scrollDirection: Axis.horizontal,
-                  itemCount: learningController.learningResponseModel.value[0].data.length,
+                  itemCount: learningController.learningResponseModel.length,
                   itemBuilder: (context, index) {
-                   final data = learningController.learningResponseModel.value[0].data[index];
+                   final data = learningController.learningResponseModel.value[index].data[index];
                     return TCard(
                       title: data.title,
                       pengajar: data.instructor,
