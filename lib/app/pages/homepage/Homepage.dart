@@ -35,6 +35,39 @@ class Homepage extends StatelessWidget {
           ),
           //ConvexNavigationBarPage()
         ],
+      body: SingleChildScrollView(
+        controller: ScrollController(),
+        child: Column(
+          children: [
+            THeaderHP(),
+            const SizedBox(
+              height: 30,
+            ),
+            Image(
+              image: AssetImage(images.banner),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            TxtCategory(),
+            SldierCategory(),
+            Row(
+              children: [
+                TCard(),
+                TCard(),
+              ],
+            ),
+            Row(
+              children: [
+                TCard(),
+                TCard(),
+              ],
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+          ],
+        ),
       ),
     );
   }
