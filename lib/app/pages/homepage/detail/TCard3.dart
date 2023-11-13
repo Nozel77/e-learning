@@ -7,12 +7,12 @@ import 'package:get/get.dart';
 
 import '../../../../helper/Themes.dart';
 
-class TCard extends StatelessWidget {
+class TCard3 extends StatelessWidget {
   final String title;
   final String pengajar;
   final LearningController learningController = Get.put(LearningController());
 
-  TCard({required this.title, required this.pengajar});
+  TCard3({required this.title, required this.pengajar});
 
   @override
   Widget build(BuildContext context) {
@@ -21,26 +21,13 @@ class TCard extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        // Container(
-        //   width: 120,
-        //   height: 200,
-        //   color: Tcolor.container1,
-        //   margin: const EdgeInsets.only(left: 20),
-        //   child: Column(
-        //     children: [
-        //       Text(title),
-        //       Text(pengajar),
-
-        //     ],
-        //   ),
-        // )
         Container(
           margin: EdgeInsets.only(left: 20),
           width: 150,
           height: 230,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: Tcolor.container1,
+            color: Tcolor.container3,
           ),
           child: Column(
             children: [
@@ -49,12 +36,12 @@ class TCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(12),
                     child: CircleAvatar(
-                      backgroundColor: Tcolor.avatr,
+                      backgroundColor: Tcolor.avatar3,
                       radius: 20,
                     ),
                   ),
                   Container(
-                    color: Tcolor.avatr,
+                    color: Tcolor.avatar3,
                     // margin: EdgeInsets.only(left: 30)
                     child: Padding(
                       padding: const EdgeInsets.all(3),

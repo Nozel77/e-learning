@@ -30,8 +30,8 @@ class _ConvexNavigationBarPageState extends State<ConvexNavigationBarPage> {
   final List<Widget> pages = [
     Homepage(),
     const CustomTab(),
-    const Ranking(),
-    const Profile()
+    //const Ranking(),
+    ProfileScreen()
   ];
 
   @override
