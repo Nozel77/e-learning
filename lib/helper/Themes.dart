@@ -13,6 +13,10 @@ class Tcolor {
   static const Color container1 = Color.fromRGBO(134, 96, 229, 1);
   static const Color avatr = Color.fromRGBO(116, 60, 194, 1);
   static const Color container2 = Color.fromRGBO(146, 146, 186, 1);
+  static const Color container3 = Color.fromRGBO(93, 105, 138, 1);
+  static const Color avatar3 = Color.fromRGBO(78, 93, 133, 1);
+  static const Color container4 = Color.fromRGBO(155, 190, 200, 1);
+  static const Color avatar4 = Color.fromRGBO(22, 72, 99, 1);
   static const Color avatar2 = Color.fromRGBO(109, 111, 138, 1);
 }
 
