@@ -22,11 +22,11 @@ class TCard3 extends StatelessWidget {
           height: 15,
         ),
         Container(
-          margin: EdgeInsets.only(left: 20),
-          width: 150,
-          height: 230,
+          margin: EdgeInsets.only(left: 10),
+          width: 170,
+          height: 220,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(10),
             color: Tcolor.container3,
           ),
           child: Column(
@@ -34,7 +34,7 @@ class TCard3 extends StatelessWidget {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(15),
                     child: CircleAvatar(
                       backgroundColor: Tcolor.avatar3,
                       radius: 20,
@@ -44,7 +44,7 @@ class TCard3 extends StatelessWidget {
                     color: Tcolor.avatar3,
                     // margin: EdgeInsets.only(left: 30)
                     child: Padding(
-                      padding: const EdgeInsets.all(3),
+                      padding: const EdgeInsets.all(7),
                       child: Text(
                         "Beginner",
                         style: GoogleFonts.poppins(
@@ -57,7 +57,7 @@ class TCard3 extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 15,
+                height: 5,
               ),
               Container(
                 alignment: Alignment.centerLeft,
