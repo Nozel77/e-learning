@@ -18,6 +18,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -35,23 +36,37 @@ class Homepage extends StatelessWidget {
             TxtCategory(),
             SldierCategory(),
             Container(
-              width: width,
-              height: height * 0.4,
-              margin: const EdgeInsets.only(bottom: 10),
-              child:ListView.builder(
-          itemCount: learningController.learningResponseModel.length,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            final learn = learningController.learningResponseModel[index];
-            return Container(
-              
-              width: width * 0.4,
-              height: height * 0.3,
-              color: Colors.white,
-              child: TCard(title: learn.title, pengajar: learn.instructor),
-            );
-          },
-          ),
+              child: Padding(
+                padding: EdgeInsets.only(
+                  right: 10,
+                ), // Adjust as needed
+                child: Container(
+                  width: width * 1.2,
+                  height: height * 1.8,
+                  margin: const EdgeInsets.only(bottom: 60),
+                  child: GridView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount:
+                          2, // Set the number of columns in the grid
+                      crossAxisSpacing: 5, // Adjust as needed
+                      mainAxisSpacing: 65, // Adjust as needed
+                    ),
+                    itemCount: learningController.learningResponseModel.length,
+                    itemBuilder: (context, index) {
+                      final learn =
+                          learningController.learningResponseModel[index];
+                      return Container(
+                        color: Colors.white,
+                        child: TCard3(
+                          title: learn.title,
+                          pengajar: learn.instructor,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
             ),
           ],
         ),
