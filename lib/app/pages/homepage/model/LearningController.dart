@@ -1,33 +1,38 @@
+import 'dart:ffi';
+import 'package:dio/dio.dart' as dio;
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 import 'LearningModel.dart';
 
 class LearningController extends GetxController{
   var isLoading = true.obs;
-  RxList<LearningResponseModels> learningResponseModel = <LearningResponseModels>[].obs;
+  var learningResponseModel = <Learning>[].obs;
 
   @override
   void onInit() {
-    fetchLearning();
+    getTeaSeries();
     super.onInit();
   }
 
-  fetchLearning() async {
-    final api = 'https://zell-learning.000webhostapp.com/api/learning';
-    try{
-      final response = await http.get(
-        Uri.parse(api),
-      );
+  Future<void> getTeaSeries() async {
+    try {
+      isLoading.value = true;
+      final dio.Dio dioInstance = dio.Dio();
+      final dio.Response response =
+          await dioInstance.get('https://zell-learning.000webhostapp.com/api/learning');
+
       if (response.statusCode == 200) {
-        learningResponseModel.value = [learningResponseModelsFromJson(response.body)];
-        isLoading(false);
-        print('success : ${response.statusCode}');
-        print('success : ${learningResponseModel.value[0].data[0].title}');
+        final List<dynamic> teaList = response.data["data"];
+        learningResponseModel.value =
+            teaList.map((json) => Learning.fromJson(json)).toList();
+        print(learningResponseModel.value[0].title);
       } else {
-        print('error : ${response.statusCode}');
+        print("Failed to fetch tea. Status code: ${response.statusCode}");
       }
-    } catch(e){
-      print(e);
+    } catch (error) {
+      print("Error while fetching tea: $error");
+    } finally {
+      isLoading.value = false;
     }
   }
 }

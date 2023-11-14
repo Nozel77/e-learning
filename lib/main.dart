@@ -1,4 +1,6 @@
 import 'package:e_learning/app/pages/BottomBar/TBottomBar.dart';
+import 'package:e_learning/app/pages/homepage/HomeKeDua.dart';
+import 'package:e_learning/app/pages/homepage/HomeKeTiga.dart';
 import 'package:e_learning/components/TCustomTab.dart';
 import 'package:e_learning/core.dart';
 import 'package:e_learning/app/pages/login/Loginpage.dart';
@@ -25,6 +27,6 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: ConvexNavigationBarPage());
+        home: Homepage());
   }
 }
