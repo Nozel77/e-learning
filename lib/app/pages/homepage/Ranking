@@ -1,0 +1,16 @@
+ return Padding(
+                    padding: EdgeInsets.only(top: 10, right: 5),
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              TCard(
+                                  title: data.title, pengajar: data.instructor),
+                              TCard3(
+                                  title: data.title, pengajar: data.instructor),
+                            ],
+                          ),
+                        ),

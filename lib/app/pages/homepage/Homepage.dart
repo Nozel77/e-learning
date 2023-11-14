@@ -38,92 +38,20 @@ class Homepage extends StatelessWidget {
               width: width,
               height: height * 0.4,
               margin: const EdgeInsets.only(bottom: 10),
-              child: ListView.builder(
-                physics: BouncingScrollPhysics(), // Smooth scrolling effect
-                scrollDirection: Axis.vertical,
-                itemCount: learningController.learningResponseModel.length,
-                itemBuilder: (context, index) {
-                  final data = learningController
-                      .learningResponseModel.value[index].data[index];
-                  return Padding(
-                    padding: EdgeInsets.only(top: 10, right: 5),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              TCard(
-                                  title: data.title, pengajar: data.instructor),
-                              TCard3(
-                                  title: data.title, pengajar: data.instructor),
-                            ],
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            TCard2(
-                                title: data.title, pengajar: data.instructor),
-                            TCard4(title: data.title, pengajar: data.instructor),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            TCard2(
-                              title: data.title,
-                              pengajar: data.instructor,
-                            ),
-                            TCard(
-                              title: data.title,
-                              pengajar: data.instructor,
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            TCard2(
-                              title: data.title,
-                              pengajar: data.instructor,
-                            ),
-                            TCard4(
-                              title: data.title,
-                              pengajar: data.instructor,
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            TCard3(
-                              title: data.title,
-                              pengajar: data.instructor,
-                            ),
-                            TCard2(
-                              title: data.title,
-                              pengajar: data.instructor,
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 10, right: 180),
-                              child: TCard2(
-                                title: data.title,
-                                pengajar: data.instructor,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
+              child:ListView.builder(
+          itemCount: learningController.learningResponseModel.length,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            final learn = learningController.learningResponseModel[index];
+            return Container(
+              
+              width: width * 0.4,
+              height: height * 0.3,
+              color: Colors.white,
+              child: TCard(title: learn.title, pengajar: learn.instructor),
+            );
+          },
+          ),
             ),
           ],
         ),

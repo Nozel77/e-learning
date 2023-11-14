@@ -29,8 +29,7 @@ class _ConvexNavigationBarPageState extends State<ConvexNavigationBarPage> {
 
   final List<Widget> pages = [
     Homepage(),
-    const CustomTab(),
-    //const Ranking(),
+    CustomTab(),
     ProfileScreen()
   ];
 
@@ -50,8 +49,6 @@ class _ConvexNavigationBarPageState extends State<ConvexNavigationBarPage> {
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.explore), label: 'Search'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: 'History'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],
         ),
