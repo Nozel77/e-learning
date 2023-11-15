@@ -1,3 +1,4 @@
+import 'package:e_learning/app/pages/detail_page/detail_page_view.dart';
 import 'package:e_learning/app/pages/navigation_bar/navigation_bar_view.dart';
 import 'package:e_learning/app/pages/profile_page/profile_page_view.dart';
 import 'package:e_learning/app/pages/payment_page/TBuyPage.dart';

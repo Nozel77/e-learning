@@ -35,4 +35,6 @@ class LearningController extends GetxController{
       isLoading.value = false;
     }
   }
+
+  void fetchLearningData() {}
 }
