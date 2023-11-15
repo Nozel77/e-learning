@@ -1,7 +1,8 @@
 import 'package:e_learning/app/pages/detail_page/detail_page_view.dart';
 import 'package:e_learning/app/pages/navigation_bar/navigation_bar_view.dart';
+import 'package:e_learning/app/pages/payment_page/payment_page_view.dart';
 import 'package:e_learning/app/pages/profile_page/profile_page_view.dart';
-import 'package:e_learning/app/pages/payment_page/TBuyPage.dart';
+import 'package:e_learning/app/pages/splash_screen/splash_screen_view.dart';
 import 'package:e_learning/global_components/tab_bar.dart';
 import 'package:e_learning/core.dart';
 import 'package:e_learning/app/pages/login_page/login_page_view.dart';
@@ -28,6 +29,6 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: ConvexNavigationBarPage());
+        home: SplashScreen());
   }
 }

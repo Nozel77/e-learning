@@ -1,8 +1,8 @@
 import 'package:e_learning/app/pages/home_page/home_page_dart.dart';
+import 'package:e_learning/app/pages/navigation_bar/navigation_bar_view.dart';
 import 'package:e_learning/app/pages/register_page/register_page_view.dart';
-import 'package:e_learning/helper/Themes.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
 
 class TLoginForm extends StatelessWidget {
@@ -35,6 +35,7 @@ class TLoginForm extends StatelessWidget {
           ),
           //Password
           TextFormField(
+            obscureText: true,
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               enabledBorder: OutlineInputBorder(
@@ -63,14 +64,12 @@ class TLoginForm extends StatelessWidget {
             ],
           ),
           const SizedBox(height: Tsize.sm),
-
-          //Log in buttin
           SizedBox(
               width: double.infinity,
               child: MaterialButton(
                 minWidth: double.infinity,
                 height: 45,
-                onPressed: () => Get.to(Homepage()),
+                onPressed: () => Get.to(ConvexNavigationBarPage()),
                 color: Tcolor.button,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

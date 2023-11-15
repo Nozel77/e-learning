@@ -12,4 +12,4 @@ export 'package:e_learning/global_components/divider.dart';
 export 'package:e_learning/app/pages/login_page/components/login_form_view.dart';
 export 'package:e_learning/app/pages/login_page/components/login_header_view.dart';
 export 'package:e_learning/global_components/social_buttons.dart';
-export 'package:e_learning/helper/Themes.dart';
+export 'package:e_learning/helper/themes/Themes.dart';

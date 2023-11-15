@@ -1,6 +1,6 @@
 import 'package:e_learning/app/pages/detail_page/detail_page_view.dart';
 import 'package:e_learning/app/api/learning_controller.dart';
-import 'package:e_learning/helper/Themes.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';

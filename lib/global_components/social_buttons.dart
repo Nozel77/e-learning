@@ -1,5 +1,5 @@
 import 'package:e_learning/app/pages/navigation_bar/navigation_bar_view.dart';
-import 'package:e_learning/helper/Themes.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
