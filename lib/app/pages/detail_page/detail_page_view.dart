@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../../helper/Themes.dart';
+import '../../../helper/themes/Themes.dart';
 import '../../api/learning_controller.dart';
 
 class DetailPage extends StatelessWidget {

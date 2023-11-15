@@ -1,8 +1,6 @@
-import 'package:e_learning/app/pages/login_page/login_page_view.dart';
-import 'package:e_learning/helper/Themes.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 
 class TRegisterForm extends StatelessWidget {
   @override
@@ -12,7 +10,6 @@ class TRegisterForm extends StatelessWidget {
       child: Form(
           child: Column(
         children: [
-          //Email
           TextFormField(
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
@@ -43,6 +40,7 @@ class TRegisterForm extends StatelessWidget {
           ),
           const SizedBox(height: Tsize.spaceBtwInputFields),
           TextFormField(
+            obscureText: true,
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               enabledBorder: OutlineInputBorder(
@@ -58,6 +56,7 @@ class TRegisterForm extends StatelessWidget {
             height: Tsize.spaceBtwInputFields,
           ),
           TextFormField(
+            obscureText: true,
             decoration: const InputDecoration(
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               enabledBorder: OutlineInputBorder(

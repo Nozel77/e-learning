@@ -1,4 +1,4 @@
-import 'package:e_learning/helper/Themes.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 
 class TRegisterHeader extends StatelessWidget {

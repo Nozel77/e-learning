@@ -134,7 +134,7 @@ class images {
   static const String onBoarding3 = "assets/onb3.png";
   static const String Next = "assets/Next.svg";
   static const String google = "assets/gugel.png";
-  static const String banner = "assets/banner.png";
+  static const String banner = "assets/bannerhome.png";
   static const String pf1 = "assets/Ellipse 9.png";
   static const String pf2 = "assets/profile2.png";
   static const String pf3 = "assets/profile3.png";
