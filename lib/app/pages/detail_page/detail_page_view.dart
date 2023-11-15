@@ -1,22 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../helper/Themes.dart';
+import '../../api/learning_controller.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({super.key});
+  final LearningController learningController = Get.put(LearningController());
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
         appBar: AppBar(
-          title: Center(
-            child: Text(
-              "Detail",
-              style: textOnboardingBold(),
-            ),
+          title: Text(
+            "Detail",
+            style: textOnboardingBold(),
           ),
           actions: const [
             Padding(

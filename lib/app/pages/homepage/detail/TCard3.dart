@@ -1,50 +1,46 @@
-import 'package:e_learning/app/pages/detail_page/detail_page_view.dart';
-import 'package:e_learning/app/api/learning_controller.dart';
-import 'package:e_learning/helper/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:get/get.dart';
 
-class TCard extends StatelessWidget {
+import '../../../../helper/Themes.dart';
+import '../../../api/learning_controller.dart';
+
+class TCard3 extends StatelessWidget {
   final String title;
   final String pengajar;
   final LearningController learningController = Get.put(LearningController());
 
-  TCard({required this.title, required this.pengajar});
+  TCard3({required this.title, required this.pengajar});
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    return GestureDetector(
-        onTap: () {
-          Get.to(DetailPage());
-        },
-        child: Container(
-          margin: EdgeInsets.only(left: 20),
-          width: width,
-          height: height * 0.5,
+    return Column(
+      children: [
+        Container(
+          margin: EdgeInsets.only(left: 10),
+          width: 170,
+          height: 220,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: Tcolor.container1,
+            color: Tcolor.container3,
           ),
           child: Column(
             children: [
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(15),
                     child: CircleAvatar(
-                      backgroundColor: Tcolor.avatr,
+                      backgroundColor: Tcolor.avatar3,
                       radius: 20,
                     ),
                   ),
                   Container(
-                    color: Tcolor.avatr,
+                    color: Tcolor.avatar3,
                     // margin: EdgeInsets.only(left: 30)
                     child: Padding(
-                      padding: const EdgeInsets.all(3),
+                      padding: const EdgeInsets.all(7),
                       child: Text(
                         "Beginner",
                         style: GoogleFonts.poppins(
@@ -57,7 +53,7 @@ class TCard extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 15,
+                height: 5,
               ),
               Container(
                 alignment: Alignment.centerLeft,
@@ -100,6 +96,9 @@ class TCard extends StatelessWidget {
                       fontSize: 15,
                     ),
                   )),
+              SizedBox(
+                height: 10,
+              ),
               Container(
                 margin: EdgeInsets.only(left: 10, right: 10),
                 height: 20,
@@ -113,8 +112,24 @@ class TCard extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 5),
+                child: LinearPercentIndicator(
+                  animation: false,
+                  lineHeight: 5,
+                  percent: 0.3,
+                  width: 140,
+                  progressColor: Colors.deepPurple,
+                  backgroundColor: Colors.deepPurple.shade200,
+                ),
+              ),
             ],
           ),
-        ));
+        ),
+      ],
+    );
   }
 }

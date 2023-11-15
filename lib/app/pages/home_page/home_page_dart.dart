@@ -1,3 +1,4 @@
+import 'package:e_learning/app/pages/home_page/components/TCard.dart';
 import 'package:e_learning/app/pages/home_page/components/TCard3.dart';
 import 'package:e_learning/app/pages/home_page/components/header_home_view.dart';
 import 'package:e_learning/app/pages/home_page/components/category.dart';
@@ -38,15 +39,15 @@ class Homepage extends StatelessWidget {
                 ), // Adjust as needed
                 child: Container(
                   width: width * 1.2,
-                  height: height * 1.8,
-                  margin: const EdgeInsets.only(bottom: 60),
+                  height: height * 1.5,
+                  margin: const EdgeInsets.only(bottom: 20, top: 20),
                   child: GridView.builder(
                     physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount:
                           2, // Set the number of columns in the grid
                       crossAxisSpacing: 5, // Adjust as needed
-                      mainAxisSpacing: 65, // Adjust as needed
+                      mainAxisSpacing: 20, // Adjust as needed
                     ),
                     itemCount: learningController.learningResponseModel.length,
                     itemBuilder: (context, index) {
@@ -54,7 +55,7 @@ class Homepage extends StatelessWidget {
                           learningController.learningResponseModel[index];
                       return Container(
                         color: Colors.white,
-                        child: TCard3(
+                        child: TCard(
                           title: learn.title,
                           pengajar: learn.instructor,
                         ),

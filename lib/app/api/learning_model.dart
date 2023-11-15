@@ -23,12 +23,14 @@ class LearningResponseModels {
         message: json["message"],
         data: List<Learning>.from(json["data"].map((x) => Learning.fromJson(x))),
     );
+    
 
     Map<String, dynamic> toJson() => {
         "status": status,
         "message": message,
         "data": List<dynamic>.from(data.map((x) => x.toJson())),
     };
+    
 }
 
 class Learning {

@@ -1,6 +1,12 @@
+import 'package:e_learning/app/api/learning_controller.dart';
+import 'package:e_learning/app/pages/home_page/components/TCard.dart';
+import 'package:e_learning/app/pages/home_page/components/TCard2.dart';
+import 'package:e_learning/app/pages/home_page/components/TCard4.dart';
+import 'package:e_learning/app/pages/homepage/detail/TCard3.dart';
 import 'package:e_learning/core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTab extends StatefulWidget {
@@ -11,11 +17,13 @@ class CustomTab extends StatefulWidget {
 }
 
 class _CustomTabState extends State<CustomTab> {
+  final LearningController learningController = Get.put(LearningController());
+
   List<String> tabs = [
     "Design",
-    "Art",
-    "Mathematics",
-    "Computer Science",
+    "IoT",
+    "BackEnd",
+    "FrontEnd",
   ];
   int current = 0;
 
@@ -26,9 +34,9 @@ class _CustomTabState extends State<CustomTab> {
       case 1:
         return 72;
       case 2:
-        return 117;
+        return 118;
       case 3:
-        return 250;
+        return 204;
       default:
         return 0;
     }
@@ -41,9 +49,9 @@ class _CustomTabState extends State<CustomTab> {
       case 1:
         return 25;
       case 2:
-        return 105;
+        return 70;
       case 3:
-        return 100;
+        return 70;
       default:
         return 0;
     }
@@ -51,7 +59,8 @@ class _CustomTabState extends State<CustomTab> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -65,15 +74,13 @@ class _CustomTabState extends State<CustomTab> {
           ),
         ],
       ),
-      body: SizedBox(
-        width: size.width,
-        height: size.height,
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Container(
               margin: const EdgeInsets.only(top: 15),
-              width: size.width,
-              height: size.height * 0.05,
+              width: width,
+              height: height * 0.05,
               child: Stack(
                 children: [
                   Positioned(
@@ -81,34 +88,35 @@ class _CustomTabState extends State<CustomTab> {
                     left: 0,
                     right: 0,
                     child: SizedBox(
-                      width: size.width,
-                      height: size.height * 0.07,
+                      width: width,
+                      height: height * 0.07,
                       child: ListView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          itemCount: tabs.length,
-                          itemBuilder: (context, index) {
-                            return Padding(
-                              padding: EdgeInsets.only(
-                                  left: index == 0 ? 10 : 23, top: 7),
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    current = index;
-                                  });
-                                },
-                                child: Text(
-                                  tabs[index],
-                                  style: GoogleFonts.poppins(
-                                    fontSize: current == index ? 16 : 14,
-                                    fontWeight: current == index
-                                        ? FontWeight.w500
-                                        : FontWeight.w400,
-                                  ),
+                        physics: const BouncingScrollPhysics(),
+                        scrollDirection: Axis.horizontal,
+                        itemCount: tabs.length,
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: EdgeInsets.only(
+                                left: index == 0 ? 10 : 23, top: 7),
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  current = index;
+                                });
+                              },
+                              child: Text(
+                                tabs[index],
+                                style: GoogleFonts.poppins(
+                                  fontSize: current == index ? 16 : 14,
+                                  fontWeight: current == index
+                                      ? FontWeight.w500
+                                      : FontWeight.w400,
                                 ),
                               ),
-                            );
-                          }),
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                   AnimatedPositioned(
@@ -119,7 +127,7 @@ class _CustomTabState extends State<CustomTab> {
                     child: AnimatedContainer(
                       margin: const EdgeInsets.only(left: 10),
                       width: changeContainerWidth(),
-                      height: size.height * 0.008,
+                      height: height * 0.008,
                       decoration: BoxDecoration(
                         color: Tcolor.style,
                         borderRadius: BorderRadius.circular(5),
@@ -132,12 +140,38 @@ class _CustomTabState extends State<CustomTab> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: size.height * 0.3),
-              child: Text(
-                "${tabs[current]} INI ISI",
-                style: textOnboardingBold(),
+              padding: EdgeInsets.only(
+                right: 10,
               ),
-            )
+              child: Container(
+                child: Container(
+                  width: width * 1,
+                  height: height * 1.4,
+                  margin: const EdgeInsets.only(bottom: 20, top: 20),
+                  child: GridView.builder(
+                    physics: NeverScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount:
+                          2, // Set the number of columns in the grid
+                      crossAxisSpacing: 1, // Adjust as needed
+                      mainAxisSpacing: 10, // Adjust as needed
+                    ),
+                    itemCount: learningController.learningResponseModel.length,
+                    itemBuilder: (context, index) {
+                      final learn =
+                          learningController.learningResponseModel[index];
+
+                      return Container(
+                        child: TCard(
+                          title: learn.title,
+                          pengajar: learn.instructor,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
