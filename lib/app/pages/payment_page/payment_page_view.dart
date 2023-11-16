@@ -1,5 +1,6 @@
 import 'package:e_learning/app/pages/payment_page/payment_page_controller.dart';
 import 'package:e_learning/app/pages/successfully_page/successfully_page_view.dart';
+import 'package:e_learning/helper/routes/app_pages.dart';
 import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -10,7 +11,33 @@ class PaymentPage extends StatelessWidget {
   void _processPayment(PaymentController paymentController) {
     print(
         'Pembayaran sebesar \$${paymentController.totalAmount.value} dengan ${paymentController.selectedPaymentMethod.value} berhasil diproses.');
-    Get.off(SuccessPage());
+    Get.offAndToNamed(Routes.SUCCESS_PAGE);
+  }
+
+  Widget radioButton(String text, String images, String value, String update) {
+    return ListTile(
+      title: Row(
+        children: <Widget>[
+          Image.asset(
+            images,
+            width: 40,
+            height: 40,
+          ),
+          SizedBox(width: 20),
+          Text(text),
+        ],
+      ),
+      onTap: () {
+        paymentController.updatePaymentMethod(update);
+      },
+      leading: Radio(
+        value: value,
+        groupValue: paymentController.selectedPaymentMethod.value,
+        onChanged: (value) {
+          paymentController.updatePaymentMethod(value.toString());
+        },
+      ),
+    );
   }
 
   @override
@@ -21,196 +48,66 @@ class PaymentPage extends StatelessWidget {
         appBar: AppBar(
           title: Text('Checkout'),
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Obx(() => Text(
-                    'Total Amount: \$${paymentController.totalAmount.value}',
-                    style: TextStyle(fontSize: 24.0),
-                  )),
-              SizedBox(height: 20.0),
-              Text(
-                'E-Money',
-                style: textOnboardingBold(),
-              ),
-              ListTile(
-                title: Row(
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/payment_gopay.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    SizedBox(width: 20),
-                    Text('Gopay'),
-                  ],
-                ),
-                onTap: () {
-                  paymentController.updatePaymentMethod('Gopay');
-                },
-                leading: Radio(
-                  value: 'Gopay',
-                  groupValue: paymentController.selectedPaymentMethod.value,
-                  onChanged: (value) {
-                    paymentController.updatePaymentMethod(value.toString());
-                  },
-                ),
-              ),
-              ListTile(
-                title: Row(
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/payment_dana.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    SizedBox(width: 20),
-                    Text('Dana'),
-                  ],
-                ),
-                onTap: () {
-                  paymentController.updatePaymentMethod('Dana');
-                },
-                leading: Radio(
-                  value: 'Dana',
-                  groupValue: paymentController.selectedPaymentMethod.value,
-                  onChanged: (value) {
-                    paymentController.updatePaymentMethod(value.toString());
-                  },
-                ),
-              ),
-              ListTile(
-                title: Row(
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/payment_ovo.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    SizedBox(width: 20),
-                    Text('Ovo'),
-                  ],
-                ),
-                onTap: () {
-                  paymentController.updatePaymentMethod('Ovo');
-                },
-                leading: Radio(
-                  value: 'Ovo',
-                  groupValue: paymentController.selectedPaymentMethod.value,
-                  onChanged: (value) {
-                    paymentController.updatePaymentMethod(value.toString());
-                  },
-                ),
-              ),
-              ListTile(
-                title: Row(
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/payment_linkaja.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    SizedBox(width: 20),
-                    Text('Linkaja'),
-                  ],
-                ),
-                onTap: () {
-                  paymentController.updatePaymentMethod('Linkaja');
-                },
-                leading: Radio(
-                  value: 'Linkaja',
-                  groupValue: paymentController.selectedPaymentMethod.value,
-                  onChanged: (value) {
-                    paymentController.updatePaymentMethod(value.toString());
-                  },
-                ),
-              ),
-              SizedBox(height: 20.0),
-              Text(
-                'Bank Transfer',
-                style: textOnboardingBold(),
-              ),
-              SizedBox(height: 20.0),
-              ListTile(
-                title: Row(
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/payment_bca.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    SizedBox(width: 20),
-                    Text('Bank BCA'),
-                  ],
-                ),
-                onTap: () {
-                  paymentController.updatePaymentMethod('Bank BCA');
-                },
-                leading: Radio(
-                  value: 'Bank BCA',
-                  groupValue: paymentController.selectedPaymentMethod.value,
-                  onChanged: (value) {
-                    paymentController.updatePaymentMethod(value.toString());
-                  },
-                ),
-              ),
-              ListTile(
-                title: Row(
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/payment_mandiri.png',
-                      width: 40,
-                      height: 40,
-                    ),
-                    SizedBox(width: 20),
-                    Text('Bank Mandiri'),
-                  ],
-                ),
-                onTap: () {
-                  paymentController.updatePaymentMethod('Bank Mandiri');
-                },
-                leading: Radio(
-                  value: 'Bank Mandiri',
-                  groupValue: paymentController.selectedPaymentMethod.value,
-                  onChanged: (value) {
-                    paymentController.updatePaymentMethod(value.toString());
-                  },
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: Text('Konfirmasi Pembayaran'),
-                        content: Obx(
-                          () => Text(
-                              'Apakah Anda yakin ingin melakukan pembayaran sebesar \$${paymentController.totalAmount.value} dengan ${paymentController.selectedPaymentMethod.value}?'),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Obx(() => Text(
+                  'Total Amount: \$${paymentController.totalAmount.value}',
+                  style: TextStyle(fontSize: 24.0),
+                )),
+            SizedBox(height: 20.0),
+            Text(
+              'E-Money',
+              style: textOnboardingBold(),
+            ),
+            radioButton("Gopay", "assets/payment_gopay.png", "Gopay", 'Gopay'),
+            radioButton("Dana", "assets/payment_dana.png", "Dana", 'Dana'),
+            radioButton("Ovo", "assets/payment_ovo.png", "Ovo", 'Ovo'),
+            radioButton(
+                "Linkaja", "assets/payment_linkaja.png", "Linkaja", 'Linkaja'),
+            SizedBox(height: 20.0),
+            Text(
+              'Bank Transfer',
+              style: textOnboardingBold(),
+            ),
+            SizedBox(height: 20.0),
+            radioButton(
+                "Bank BCA", "assets/payment_bca.png", "Bank BCA", 'Bank BCA'),
+            radioButton("Bank Mandiri", "assets/payment_mandiri.png",
+                "Bank Mandiri", 'Bank Mandiri'),
+            SizedBox(height: 20.0),
+            ElevatedButton(
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Konfirmasi Pembayaran'),
+                      content: Obx(
+                        () => Text(
+                            'Apakah Anda yakin ingin melakukan pembayaran sebesar \$${paymentController.totalAmount.value} dengan ${paymentController.selectedPaymentMethod.value}?'),
+                      ),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          child: Text('Batal'),
                         ),
-                        actions: <Widget>[
-                          TextButton(
-                            onPressed: () {
-                              Get.back();
-                            },
-                            child: Text('Batal'),
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              _processPayment(paymentController);
-                            },
-                            child: Text('Konfirmasi'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                },
-                child: Text('Bayar Sekarang'),
-              ),
-            ],
-          ),
+                        TextButton(
+                          onPressed: () {
+                            _processPayment(paymentController);
+                          },
+                          child: Text('Konfirmasi'),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: Text('Bayar Sekarang'),
+            ),
+          ],
         ),
       ),
     );

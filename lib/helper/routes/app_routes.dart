@@ -7,7 +7,9 @@ abstract class Routes {
   static const LOGIN_SCREEN = _Paths.LOGIN_SCREEN;
   static const ONBOARDING_SCREEN = _Paths.ONBOARDING_SCREEN;
   static const HOME_PAGE = _Paths.HOME_PAGE;
-}
+  static const PAYMENT_PAGE = _Paths.PAYMENT_PAGE;
+  static const SUCCESS_PAGE = _Paths.SUCCESS_PAGE;
+ }
 
 abstract class _Paths {
   _Paths._();
@@ -16,5 +18,7 @@ abstract class _Paths {
   static const LOGIN_SCREEN = '/login';
   static const ONBOARDING_SCREEN = '/onboarding';
   static const HOME_PAGE = '/home';
+  static const PAYMENT_PAGE = '/payment';
+  static const SUCCESS_PAGE = '/success';
 
 }

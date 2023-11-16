@@ -68,7 +68,7 @@ class TLoginForm extends StatelessWidget {
               child: MaterialButton(
                 minWidth: double.infinity,
                 height: 45,
-                onPressed: () => Get.offAndToNamed(Routes.HOME_PAGE),
+                onPressed: () => Get.offAndToNamed(Routes.PAYMENT_PAGE),
                 color: Tcolor.button,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
