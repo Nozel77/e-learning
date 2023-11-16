@@ -1,4 +1,6 @@
+import 'package:e_learning/helper/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'profile_menu_view.dart';
 import 'profile_picture_view.dart';
@@ -33,7 +35,7 @@ class Body extends StatelessWidget {
         ProfileMenu(
           text: "Log Out",
           icon: "assets/Log out.svg",
-          press: () {},
+          press: () => Get.offAndToNamed(Routes.LOGIN_SCREEN),
         ),
       ],
     );

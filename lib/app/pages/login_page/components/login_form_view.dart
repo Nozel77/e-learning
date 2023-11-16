@@ -1,6 +1,5 @@
-import 'package:e_learning/app/pages/home_page/home_page_dart.dart';
 import 'package:e_learning/app/pages/navigation_bar/navigation_bar_view.dart';
-import 'package:e_learning/app/pages/register_page/register_page_view.dart';
+import 'package:e_learning/helper/routes/app_pages.dart';
 import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -69,7 +68,7 @@ class TLoginForm extends StatelessWidget {
               child: MaterialButton(
                 minWidth: double.infinity,
                 height: 45,
-                onPressed: () => Get.to(ConvexNavigationBarPage()),
+                onPressed: () => Get.offAndToNamed(Routes.HOME_PAGE),
                 color: Tcolor.button,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),

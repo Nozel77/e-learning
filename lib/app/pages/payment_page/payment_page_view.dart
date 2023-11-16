@@ -1,6 +1,6 @@
 import 'package:e_learning/app/pages/payment_page/payment_page_controller.dart';
 import 'package:e_learning/app/pages/successfully_page/successfully_page_view.dart';
-import 'package:e_learning/core.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
