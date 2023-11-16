@@ -165,6 +165,9 @@ class _CustomTabState extends State<CustomTab> {
                         child: TCard(
                           title: learn.title,
                           pengajar: learn.instructor,
+                          price: learn.price,
+                          //lessons: learn.lessons,
+                          //image: learn.image,
                         ),
                       );
                     },
