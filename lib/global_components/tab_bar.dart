@@ -3,7 +3,7 @@ import 'package:e_learning/app/pages/home_page/components/TCard.dart';
 import 'package:e_learning/app/pages/home_page/components/TCard2.dart';
 import 'package:e_learning/app/pages/home_page/components/TCard4.dart';
 import 'package:e_learning/app/pages/homepage/detail/TCard3.dart';
-import 'package:e_learning/core.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

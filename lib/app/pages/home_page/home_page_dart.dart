@@ -8,6 +8,10 @@ import 'package:e_learning/app/pages/home_page/components/TCard.dart';
 import 'package:e_learning/app/pages/home_page/components/header_home_view.dart';
 import 'package:e_learning/app/pages/home_page/components/category.dart';
 import 'package:e_learning/app/pages/home_page/components/category_text.dart';
+import 'package:e_learning/app/api/learning_controller.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Homepage extends StatefulWidget {
   @override

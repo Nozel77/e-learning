@@ -1,6 +1,8 @@
 import 'package:e_learning/app/pages/register_page/components/register_form_view.dart';
 import 'package:e_learning/app/pages/register_page/components/register_header_view.dart';
-import 'package:e_learning/core.dart';
+import 'package:e_learning/global_components/divider.dart';
+import 'package:e_learning/global_components/social_buttons.dart';
+import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
