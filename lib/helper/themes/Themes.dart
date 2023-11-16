@@ -134,10 +134,16 @@ class images {
   static const String onBoarding3 = "assets/onb3.png";
   static const String Next = "assets/Next.svg";
   static const String google = "assets/gugel.png";
-  static const String banner = "assets/bannerhome.png";
+  static const String banner = "assets/Frame 10 1.png";
+  static const String banner2 = "assets/Frame 11.png";
+  static const String banner3 = "assets/Frame 12.png";
   static const String pf1 = "assets/Ellipse 9.png";
   static const String pf2 = "assets/profile2.png";
   static const String pf3 = "assets/profile3.png";
   static const String web1 = "assets/icons8-web-design-64 (1) 1.svg";
   static const String Webdesain = "assets/Webdesain.png";
+  static const String icon1 = "assets/jam.png";
+  static const String icon2 = "assets/jam2.png";
+  static const String icon3 = "assets/Star.png";
+  static const String icon4 = "assets/pesawat.png";
 }
