@@ -1,5 +1,6 @@
 import 'package:e_learning/app/pages/payment_page/payment_page_controller.dart';
 import 'package:e_learning/app/pages/successfully_page/successfully_page_view.dart';
+import 'package:e_learning/helper/routes/app_pages.dart';
 import 'package:e_learning/helper/themes/Themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,7 +13,33 @@ class PaymentPage extends StatelessWidget {
   void _processPayment(PaymentController paymentController) {
     print(
         'Pembayaran sebesar \$${paymentController.totalAmount.value} dengan ${paymentController.selectedPaymentMethod.value} berhasil diproses.');
-    Get.off(SuccessPage());
+    Get.offAndToNamed(Routes.SUCCESS_PAGE);
+  }
+
+  Widget radioButton(String text, String images, String value, String update) {
+    return ListTile(
+      title: Row(
+        children: <Widget>[
+          Image.asset(
+            images,
+            width: 40,
+            height: 40,
+          ),
+          SizedBox(width: 20),
+          Text(text),
+        ],
+      ),
+      onTap: () {
+        paymentController.updatePaymentMethod(update);
+      },
+      leading: Radio(
+        value: value,
+        groupValue: paymentController.selectedPaymentMethod.value,
+        onChanged: (value) {
+          paymentController.updatePaymentMethod(value.toString());
+        },
+      ),
+    );
   }
 
   @override
