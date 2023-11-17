@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import "package:google_fonts/google_fonts.dart";
 
 class Tcolor {
-  static const Color background = Colors.white;
+  static const Color background = Color.fromRGBO(248, 248, 248, 1);
   static const Color textColor = Color.fromRGBO(46, 46, 65, 1);
   static const Color button = Color.fromRGBO(89, 143, 237, 1);
-  static const Color style = Color.fromRGBO(29, 38, 125, 1);
+  static const Color style = Color.fromRGBO(53, 170, 255, 1);
   static const Color secondaryText = Color.fromRGBO(255, 193, 0, 1);
   static const Color grey = Color.fromRGBO(138, 142, 151, 1);
   static const Color darkGrey = Color.fromRGBO(74, 76, 79, 1);

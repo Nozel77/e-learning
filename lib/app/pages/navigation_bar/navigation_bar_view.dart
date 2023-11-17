@@ -1,10 +1,8 @@
 import 'package:e_learning/app/pages/navigation_bar/navigation_bar_controller.dart';
 import 'package:e_learning/app/pages/profile_page/profile_page_view.dart';
-import 'package:e_learning/app/pages/rank_page/rangking_page_view.dart';
 import 'package:e_learning/app/pages/home_page/home_page_dart.dart';
 import 'package:e_learning/global_components/tab_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../../helper/themes/Themes.dart';
