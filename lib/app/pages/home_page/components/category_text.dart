@@ -1,6 +1,5 @@
 import 'package:e_learning/global_components/tab_bar.dart';
 import 'package:e_learning/helper/themes/Themes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

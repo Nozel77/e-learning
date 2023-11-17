@@ -1,6 +1,5 @@
 import 'package:e_learning/app/api/learning_model.dart';
-import 'package:e_learning/app/pages/home_page/home_page_dart.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:e_learning/app/pages/detail_page/widget/buy.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,10 +18,10 @@ class DetailPage extends StatelessWidget {
 
     final data = Get.arguments;
 
-
     Learning learn = data!;
     // Learning model = Model!;
-    return Scaffold(
+    return Container(
+      child: Scaffold(
         appBar: AppBar(
           title: Text(
             learn.title,
@@ -49,30 +48,32 @@ class DetailPage extends StatelessWidget {
                       children: [
                         Center(
                           child: Container(
+                            margin: EdgeInsets.all(10.0),
                             child: Image.network(
                               learn.images,
-                              width: 320,
-                              height: 240,
+                              height: 200,
+                              fit: BoxFit.fill,
                             ),
                           ),
                         ),
                         Container(
+                          margin: EdgeInsets.all(10),
                           child: Padding(
                             padding: EdgeInsets.only(
-                              right: 135,
+                              right: 10,
                             ),
                             child: Text(
                               data.title,
-                              style: textOnboardingBold(),
+                              style: GoogleFonts.poppins(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 20,
+                                  color: Tcolor.textColor),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
                         Container(
-                          alignment: Alignment.centerLeft,
-                          margin: EdgeInsets.only(left: 20, right: 20),
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.all(10),
                           child: Row(
                             children: <Widget>[
                               CircleAvatar(
@@ -86,7 +87,7 @@ class DetailPage extends StatelessWidget {
                               Container(
                                 margin: EdgeInsets.only(left: 5),
                                 child: Text(
-                                  learn.lessons,
+                                  "${learn.lessons} lesson",
                                   style: TextStyle(fontSize: 16),
                                 ),
                               ),
@@ -102,8 +103,7 @@ class DetailPage extends StatelessWidget {
                                 ),
                               ),
                               Container(
-                                margin: EdgeInsets.only(
-                                    left: 5), // Adjust as needed
+                                margin: EdgeInsets.only(left: 5),
                                 child: Text(
                                   learn.duration,
                                   style: TextStyle(fontSize: 16),
@@ -113,9 +113,10 @@ class DetailPage extends StatelessWidget {
                                 margin: EdgeInsets.only(left: 20),
                                 child: CircleAvatar(
                                   child: Icon(
-                                    Icons.star_border_outlined,
+                                    Icons.star_border_rounded,
                                     color: Tcolor.button,
                                   ),
+                                  backgroundColor: Tcolor.border,
                                   radius: 12,
                                 ),
                               ),
@@ -136,17 +137,15 @@ class DetailPage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20),
+                  Container(
                     child: Container(
-                      child: Padding(
-                        padding: EdgeInsets.only(
-                          right: 10,
-                        ),
-                        child: Text(
-                          learn.description,
-                          style: textOnboardingMedium(),
-                        ),
+                      margin: EdgeInsets.all(10),
+                      child: Text(
+                        learn.description,
+                        style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                            color: Tcolor.grey),
                       ),
                     ),
                   ),
@@ -154,23 +153,23 @@ class DetailPage extends StatelessWidget {
                     height: 10,
                   ),
                   Container(
-                      margin: EdgeInsets.only(left: 10, right: 10),
-                      width: 320,
-                      height: 70,
+                      margin: EdgeInsets.all(10),
+                      width: 335,
+                      height: 80,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Tcolor.border,
+                        borderRadius: BorderRadius.circular(5),
+                        color: Tcolor.button,
                       ),
                       child: Row(children: <Widget>[
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(left: 15.0, top: 8.0),
+                              padding: EdgeInsets.only(left: 15.0, top: 5.0),
                               child: Text(data.instructor,
                                   style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 22,
+                                    fontSize: 21,
                                   )),
                             ),
                             Padding(
@@ -179,8 +178,8 @@ class DetailPage extends StatelessWidget {
                                 data.instructor,
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 12,
-                                    color: Tcolor.grey),
+                                    fontSize: 17,
+                                    color: Tcolor.textColor),
                               ),
                             ),
                           ],
@@ -192,51 +191,28 @@ class DetailPage extends StatelessWidget {
                               Icons.message_rounded,
                               color: Tcolor.button,
                             ),
-                            radius: 40,
-                            backgroundColor: Tcolor.border,
+                            radius: 30,
+                            backgroundColor: Tcolor.background,
                           ),
-                        ),
-                      ])),
-                  SizedBox(
-                    height: 60,
-                  ),
-                  Container(
-                      margin: EdgeInsets.only(left: 5, right: 5),
-                      width: 340,
-                      height: 80,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Tcolor.border,
-                      ),
-                      child: Row(children: <Widget>[
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 15.0, top: 8.0),
-                              child: Text("Total Price",
-                                  style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 20,
-                                  )),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 15.0, top: 3.0),
-                              child: Text(
-                                data.price.toString(),
-                                style: GoogleFonts.poppins(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 20,
-                                    color: Tcolor.grey),
-                              ),
-                            ),
-                          ],
                         ),
                       ])),
                 ],
               ),
             ),
           ],
-        )));
+        )),
+        bottomSheet: BottomSheet(
+          onClosing: () {},
+          backgroundColor: Tcolor.background,
+          enableDrag: false,
+          builder: (context) {
+            return SizedBox(
+              height: 80,
+              child: TotalPriceWidget(),
+            );
+          },
+        ),
+      ),
+    );
   }
 }

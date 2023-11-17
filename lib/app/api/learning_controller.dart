@@ -1,11 +1,9 @@
-import 'dart:ffi';
 import 'package:dio/dio.dart' as dio;
-import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 import 'learning_model.dart';
 
-class LearningController extends GetxController{
-  var isLoading = true.obs;
+class LearningController extends GetxController {
+  RxBool isLoading = false.obs;
   var learningResponseModel = <Learning>[].obs;
 
   @override
@@ -18,14 +16,17 @@ class LearningController extends GetxController{
     try {
       isLoading.value = true;
       final dio.Dio dioInstance = dio.Dio();
-      final dio.Response response =
-          await dioInstance.get('https://zell-learning.000webhostapp.com/api/learning');
+      final dio.Response response = await dioInstance
+          .get('https://zell-learning.000webhostapp.com/api/learning');
 
       if (response.statusCode == 200) {
         final List<dynamic> teaList = response.data["data"];
         learningResponseModel.value =
             teaList.map((json) => Learning.fromJson(json)).toList();
         print(learningResponseModel.value[0].title);
+
+        Get.snackbar("halo", "");
+        isLoading.value = true;
       } else {
         print("Failed to fetch tea. Status code: ${response.statusCode}");
       }
